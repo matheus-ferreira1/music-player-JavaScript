@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/2001222899.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Player de música</title>
+</head>
+<body>
+
+    <div class="main">
+        <p id="logo"><i class="fa-solid fa-music"></i>music</p>
+
+        <!-- lado esquerdo -->
+        <div class="left">
+
+            <!-- song image -->
+            <img id="track_image" >
+            <div class="volume">
+                <p id="volume_show">90</p>
+                <i class="fa-solid fa-volume-high" id="volume_icon" aria-hidden="true" onclick="mute_sound()"></i>
+                <input type="range" min="0" max="100" value="90" onchange="volume_change()">
+            </div>
+        </div>
+
+        <!-- lado direito -->
+        <div class="right">
+
+            <div class="show_song_no">
+                <p id="present"> 1</p>
+                <p>/</p>
+                <p id="total">5</p>
+            </div>
+
+            <!-- song title -->
+            <p id="title">title.mp3</p>
+            <p id="artist">artist name</p>
+
+            <!-- parte do meio -->                
+            <div class="middle">
+                <button onclick="previous_song()" id="pre"><i class="fa-solid fa-backward-step" aria-hidden="true"></i></button>
+                <button onclick="justplay()" id="play"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                <button onclick="next_song()" id="next"><i class="fa-solid fa-forward-step  aria-hidden="true"" ></i></button>
+            </div>
+
+            <!-- duracao da musica -->                
+            <div class="duration">
+                <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+            </div>
+            <button id="auto" onclick="autoplay_switch()">Autoplay <i class="fa-solid fa-circle-notch"></i></button>
+            
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>    
+</body>
+</html>
